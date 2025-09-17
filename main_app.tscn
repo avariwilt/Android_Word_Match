@@ -1,0 +1,363 @@
+[gd_scene load_steps=8 format=3 uid="uid://cxxbgosshai20"]
+
+[ext_resource type="Theme" uid="uid://0q4e64qogstx" path="res://new_theme.tres" id="1_lmmkt"]
+[ext_resource type="Script" uid="uid://cas8u03motlj" path="res://main_app.gd" id="1_o16eq"]
+[ext_resource type="Texture2D" uid="uid://cx25pc1k8wvht" path="res://assets/star.svg" id="2_mlpmq"]
+[ext_resource type="PackedScene" uid="uid://cnmcxsb7ynaaw" path="res://favourite_sentence.tscn" id="4_t7465"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mlpmq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlpmq"]
+bg_color = Color(0.836498, 0.783967, 0.663758, 1)
+
+[sub_resource type="Theme" id="Theme_mlpmq"]
+Label/colors/font_color = Color(0.323833, 0.193636, 0.624747, 1)
+Label/font_sizes/font_size = 30
+
+[node name="MainApp" type="Node2D"]
+script = ExtResource("1_o16eq")
+
+[node name="not sure" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="not sure"]
+layout_mode = 0
+offset_right = 449.0
+offset_bottom = 800.0
+color = Color(0.835028, 0.862867, 0.990265, 1)
+metadata/_edit_lock_ = true
+
+[node name="Container" type="Panel" parent="not sure"]
+clip_contents = true
+layout_mode = 1
+offset_right = 449.0
+offset_bottom = 799.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mlpmq")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="not sure/Container"]
+visible = false
+layout_mode = 0
+offset_right = 449.0
+offset_bottom = 735.0
+metadata/_edit_lock_ = true
+
+[node name="Container3" type="Container" parent="not sure/Container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="text greeeting" type="Label" parent="not sure/Container/VBoxContainer"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Click to get a new word match"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Container" type="Container" parent="not sure/Container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_direction = 3
+layout_mode = 2
+
+[node name="Container" type="Container" parent="not sure/Container/VBoxContainer/Container"]
+layout_mode = 2
+
+[node name="favorite_word" type="Button" parent="not sure/Container/VBoxContainer/Container/Container"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+icon = ExtResource("2_mlpmq")
+flat = true
+alignment = 2
+vertical_icon_alignment = 2
+
+[node name="word1" type="Label" parent="not sure/Container/VBoxContainer"]
+z_index = 2
+z_as_relative = false
+layout_mode = 2
+theme = ExtResource("1_lmmkt")
+theme_override_font_sizes/font_size = 40
+text = "word1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="not sure/Container/VBoxContainer/word1"]
+z_index = 1
+z_as_relative = false
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.958553, 0.854469, 1)
+
+[node name="word2" type="Label" parent="not sure/Container/VBoxContainer"]
+z_index = 2
+z_as_relative = false
+layout_mode = 2
+theme = ExtResource("1_lmmkt")
+theme_override_font_sizes/font_size = 40
+text = "word2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="not sure/Container/VBoxContainer/word2"]
+z_index = 1
+z_as_relative = false
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.958553, 0.854469, 1)
+
+[node name="Container2" type="Container" parent="not sure/Container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Press" type="Button" parent="not sure/Container/VBoxContainer"]
+custom_minimum_size = Vector2(200, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_lmmkt")
+text = "Press"
+
+[node name="sentence" type="VBoxContainer" parent="not sure/Container"]
+visible = false
+layout_mode = 0
+offset_right = 449.0
+offset_bottom = 735.0
+metadata/_edit_lock_ = true
+
+[node name="Container3" type="Container" parent="not sure/Container/sentence"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="text greeeting" type="Label" parent="not sure/Container/sentence"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Click to get a new sentence prompt"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Container" type="Container" parent="not sure/Container/sentence"]
+custom_minimum_size = Vector2(0, 100)
+layout_direction = 3
+layout_mode = 2
+
+[node name="Container" type="Container" parent="not sure/Container/sentence/Container"]
+layout_mode = 2
+
+[node name="favorite_sentence" type="Button" parent="not sure/Container/sentence/Container/Container"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+icon = ExtResource("2_mlpmq")
+flat = true
+alignment = 2
+vertical_icon_alignment = 2
+
+[node name="sentence_text" type="Label" parent="not sure/Container/sentence"]
+z_index = 2
+z_as_relative = false
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme = ExtResource("1_lmmkt")
+theme_override_font_sizes/font_size = 40
+text = "sentence"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="not sure/Container/sentence/sentence_text"]
+z_index = 1
+z_as_relative = false
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.958553, 0.854469, 1)
+
+[node name="Container2" type="Container" parent="not sure/Container/sentence"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Press_sentence" type="Button" parent="not sure/Container/sentence"]
+custom_minimum_size = Vector2(200, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_lmmkt")
+text = "Press"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="not sure/Container"]
+layout_mode = 0
+offset_top = 737.0
+offset_right = 449.0
+offset_bottom = 799.0
+
+[node name="Button1" type="Button" parent="not sure/Container/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+text = "01
+"
+
+[node name="Button2" type="Button" parent="not sure/Container/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+text = "02"
+
+[node name="Button3" type="Button" parent="not sure/Container/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+text = "03"
+
+[node name="Button4" type="Button" parent="not sure/Container/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+text = "04"
+
+[node name="favoriteSentenceMode" type="Panel" parent="not sure/Container"]
+visible = false
+layout_mode = 0
+offset_left = 11.0
+offset_top = 14.0
+offset_right = 437.0
+offset_bottom = 724.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mlpmq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="not sure/Container/favoriteSentenceMode"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_right = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FavouriteSentences" type="Label" parent="not sure/Container/favoriteSentenceMode/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.606746, 0.310307, 0.418217, 1)
+theme_override_font_sizes/font_size = 40
+text = "Favourite sentences"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="not sure/Container/favoriteSentenceMode/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="FavSentenceList" type="VBoxContainer" parent="not sure/Container/favoriteSentenceMode/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="TESTfavouriteSentence" type="Label" parent="not sure/Container/favoriteSentenceMode/VBoxContainer/ScrollContainer/FavSentenceList"]
+visible = false
+z_index = 1
+z_as_relative = false
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme = SubResource("Theme_mlpmq")
+text = "sentence"
+
+[node name="TextureRect" type="ColorRect" parent="not sure/Container/favoriteSentenceMode/VBoxContainer/ScrollContainer/FavSentenceList/TESTfavouriteSentence"]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.839216, 1)
+
+[node name="favouriteSentence" parent="not sure/Container/favoriteSentenceMode/VBoxContainer/ScrollContainer/FavSentenceList" instance=ExtResource("4_t7465")]
+visible = false
+layout_mode = 2
+
+[node name="favoriteWordMode" type="Panel" parent="not sure/Container"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 14.0
+offset_right = 437.0
+offset_bottom = 724.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mlpmq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="not sure/Container/favoriteWordMode"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_right = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FavouriteSentences" type="Label" parent="not sure/Container/favoriteWordMode/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.606746, 0.310307, 0.418217, 1)
+theme_override_font_sizes/font_size = 40
+text = "Favourite Word Matches"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="not sure/Container/favoriteWordMode/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="FavWordList" type="VBoxContainer" parent="not sure/Container/favoriteWordMode/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="TESTfavouriteSentence" type="Label" parent="not sure/Container/favoriteWordMode/VBoxContainer/ScrollContainer/FavWordList"]
+visible = false
+z_index = 1
+z_as_relative = false
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme = SubResource("Theme_mlpmq")
+text = "sentence"
+
+[node name="TextureRect" type="ColorRect" parent="not sure/Container/favoriteWordMode/VBoxContainer/ScrollContainer/FavWordList/TESTfavouriteSentence"]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.839216, 1)
+
+[node name="favouriteSentence" parent="not sure/Container/favoriteWordMode/VBoxContainer/ScrollContainer/FavWordList" instance=ExtResource("4_t7465")]
+visible = false
+layout_mode = 2
+
+[connection signal="pressed" from="not sure/Container/VBoxContainer/Container/Container/favorite_word" to="." method="_on_favorite_pressed"]
+[connection signal="pressed" from="not sure/Container/VBoxContainer/Press" to="." method="_on_press_pressed"]
+[connection signal="pressed" from="not sure/Container/sentence/Container/Container/favorite_sentence" to="." method="_on_favorite_sentence_pressed"]
+[connection signal="pressed" from="not sure/Container/sentence/Press_sentence" to="." method="_on_press_sentence_pressed"]
+[connection signal="pressed" from="not sure/Container/HBoxContainer/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="not sure/Container/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="not sure/Container/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="not sure/Container/HBoxContainer/Button4" to="." method="_on_button_4_pressed"]

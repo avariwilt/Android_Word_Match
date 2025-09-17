@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnmcxsb7ynaaw"]
+
+[sub_resource type="Theme" id="Theme_t1ugk"]
+Label/colors/font_color = Color(0.323833, 0.193636, 0.624747, 1)
+Label/font_sizes/font_size = 30
+
+[node name="favouriteSentence" type="Label"]
+z_index = 1
+z_as_relative = false
+custom_minimum_size = Vector2(400, 0)
+theme = SubResource("Theme_t1ugk")
+text = "sentence"
+autowrap_mode = 3
+
+[node name="TextureRect" type="ColorRect" parent="."]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.839216, 1)
